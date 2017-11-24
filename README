@@ -25,3 +25,11 @@ Team Ranking:
 	Policy Team: Interested in regulating VPN connections
 	Platform Team: Interested in learning more about caching, collecting performance data
 	Data Team: Interested in making use of policy metadata 
+
+Sources & Inspiration:
+
+https://danielmiessler.com/blog/professional-firewall-iptables/
+https://www.digitalocean.com/community/tutorials/a-deep-dive-into-iptables-and-netfilter-architecture
+// some previous code for parsing CSV files that I had
+https://github.com/ldx/python-iptables/blob/master/iptc/ip4tc.py
+http://www.geeksforgeeks.org/trie-insert-and-search/
