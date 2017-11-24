@@ -47,15 +47,3 @@ public class Firewall {
 //performance : tradeoffs between space and time complexity is a core component
 // think about performance instead of settling for the naive soln
 //expect the code to work "reasonably quickly"; not appear unresponsive (500K-1M items) after the dataset has been loaded (i.e. after constructor has returned)
-
-
-//10:20 AM Initial Thoughts: 
-	//Build a sort of trie decision tree? But more commonly used rules won't have a faster processing time?
-	//Researching how firewalls are built
-//10:25 AM Learning about iptables, found the filter table
-//10:41 AM Set up the CSV reader, as far as I can tell I can't implement an iptable, so I'll have to build a similar one
-//10:48 switching from java to python, found a python library that can implement iptables
-//11:55 Reread the specs, can't use special python libraries, and i'm pretty sure that qualifies
-//11:22 Finished building the decision trie, if I had more time I would definitely go learn more about how the iptable is built
-//11:35 Writing accept_packet, moving on to work on reading in ranges, might run out of time though
-//12:00 Went a bit over because I rewrote the checkPass to be recursive, but still having errors with the checkPass for port range
