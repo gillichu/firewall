@@ -23,17 +23,35 @@ public class Firewall {
 		specs[3] = ipAddress;
 
 		for (int i = 0; i < specs.length; i++){
-			System.out.print(specs[i]);
+			System.out.print(specs[i] + " ");
 		}
+		System.out.println();
 
 		return d.checkSpec(specs);
 	}
 
 
 	public static void main(String[] args) {
-		Firewall f = new Firewall("/Users/gillianchu/Desktop/Firewall/inputfile.csv");
-		System.out.println(f.accept_packet("outbound", "tcp", 10000-20000, "192.168.10.11"));
-		System.out.println(f.accept_packet("outbound", "tcp", 12000, "192.168.10.11"));
+		long startTime = System.nanoTime();
+		System.out.println("Starting input of rules...");
+		Firewall f = new Firewall("/Users/gillianchu/Desktop/Firewall/inputmassiverules.csv");
+		System.out.println("Ending input of rules...");
+		long endTime = System.nanoTime();
+		System.out.println("Took "+(endTime - startTime) + " ns"); 
+
+		//Just trying the first ten of the rules
+		System.out.println(f.accept_packet("inbound","udp",64626,"49.45.220.2"));
+		System.out.println(f.accept_packet("inbound","udp",64626,"49.45.220.3"));
+
+
+		// System.out.println("Starting packet input...");
+		// System.out.println("ACCEPTED: " + f.accept_packet("outbound", "tcp", 85, "192.168.10.11"));
+		// System.out.println("ACCEPTED: " + f.accept_packet("outbound", "tcp", 12000, "192.168.10.11"));
+		// System.out.println("ACCEPTED: " + f.accept_packet("outbound", "tcp", 12000, "192.168.10.12"));
+		// System.out.println("ACCEPTED: " + f.accept_packet("inbound", "udp", 53, "192.168.1.7"));
+		// System.out.println("Ending packet input...");
+
+
 	} 
 
 }

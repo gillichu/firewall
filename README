@@ -12,6 +12,10 @@ Design Log:
 //11:35 Writing accept_packet, moving on to work on reading in ranges, might run out of time though
 //12:00 Went a bit over because I rewrote the checkPass to be recursive, but still having errors with the checkPass for port range
 
+Later Added:
+// Learned about B-Trees, sounds much more aligned, but I'll try to figure out what I did
+
+
 Algorithmic Choices:
 	In hindsight, I would have preferred to be able to understand more about how IPtables organize the rules. As is, my solution fails to correctly pass packets, and I think perhaps rewriting a Trie class from scratch in 90 minutes was a bit too ambitious. I didn't think about parsing the IPAddresses or ports until much later in the process, and ended up hard coding things like the column index, which was less than ideal. I also didn't really have time to think about efficiency at all. Thinking about the trie model now, I never got to go back and consider how to update rules with a faster processing time. Perhaps adding weights to the rule values saved in each TrieNode, and organizing the hashSet as a heap with those weights as priorities (so that i could investigate the rules that are queried more and have heavier weight, faster) would have been a better tweak. This largely depends on the constant time querying of sets. Otherwise, this implementation would have been no better than simply iterating through all of the rules. 
 
